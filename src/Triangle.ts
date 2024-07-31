@@ -27,4 +27,6 @@ export abstract class Triangle extends Geometrical {
   public getArea(): number {
     return this.area;
   }
+
+  abstract toString(): string;
 }
