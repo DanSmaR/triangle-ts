@@ -28,6 +28,20 @@ describe('Triangle Area Calculations', () => {
     });    
   });
 
+  describe('Scalene Triangle', () => {
+    it('should return the area of an scalene triangle', () => {
+      const triangle: Triangle = TriangleFactory.createTriangle(3, 5, 6) as Triangle;
+      expect(triangle.getArea()).toBeCloseTo(7.48, 2)
+    });
+  
+    it('should print the triangle type, sides and the area', () => {
+      const triangle: Triangle = TriangleFactory.createTriangle(3, 5, 6) as Triangle;
+      console.log(triangle.toString());
+      
+      expect(triangle.toString()).toBe('Scalene Triangle: sides 3, 5, 6, area: 7.48');
+    });    
+  });
+
   it('should throw a error message in case of invalid sides', () => {
     expect(() => {
       TriangleFactory.createTriangle(1, 2, 3);

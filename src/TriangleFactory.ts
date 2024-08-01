@@ -1,6 +1,7 @@
 import { Triangle } from './Triangle';
 import { EquilateralTriangle } from './EquilateralTriangle';
 import { IsoscelesTriangle } from './IsoscelesTriangle';
+import { ScaleneTriangle } from './ScaleneTriangle';
 
 export class TriangleFactory {
   static createTriangle(a: number, b: number, c: number): Triangle | undefined {
@@ -17,6 +18,8 @@ export class TriangleFactory {
       } else {
         return new IsoscelesTriangle(b, a);
       }
+    } else if (a !== b && b !== c && a !== c) {
+      return new ScaleneTriangle(a, b, c);
     }
   }
 
