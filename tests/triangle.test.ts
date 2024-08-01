@@ -11,4 +11,10 @@ describe('Triangle Area Calculations', () => {
     const triangle: Triangle = TriangleFactory.createTriangle(10, 10, 10) as Triangle;
     expect(triangle.toString()).toBe('Equilateral Triangle: sides 10, 10, 10, area 43.30');
   });
+
+  it('should throw a error message in case of invalid sides', () => {
+    expect(() => {
+      TriangleFactory.createTriangle(1, 2, 3);
+    }).toThrow('The sides do not form a valid triangle');
+  });
 });
